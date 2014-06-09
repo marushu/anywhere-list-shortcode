@@ -28,7 +28,8 @@ function anywhere_list( $atts ) {
 		'cat_name'			=>	'',
 		'num'						=>	3,
 		'class'					=>	'',
-		'order'					=>	'date',
+		'orderby'				=>	'post_date',
+		'order'					=>	'DESC',
 		'length'				=>	'',
 		'end_of_title'	=>	'',
 		'taxonomy'			=>	'',
@@ -41,11 +42,14 @@ function anywhere_list( $atts ) {
 		  'posts_per_page'	=>	$num,
 		  'order'						=>	$order,
 		  'category_name'		=>	$cat_name,
+		  'orderby'					=>	$orderby,
+		  'order'						=>	$order
 		);
 	} elseif( ! empty( $taxonomy ) && ! empty( $term ) ) {
 		$args = array(
 		  'post_type'			=>	$post_type,
 		  'posts_per_page'=>	$num,
+		  'orderby'				=>	$orderby,
 		  'order'					=>	$order,
 		  'tax_query' => array(
 				array(
